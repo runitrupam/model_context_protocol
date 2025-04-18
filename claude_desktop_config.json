@@ -58,7 +58,6 @@
         "${DATABASE_URI}"
       ]
     },
-    
     "postgres_mcp": {
       "command": "/Users/rranjan/.local/bin/uv",
       "args": [
@@ -76,7 +75,19 @@
       "env": {
         "DATABASE_URI": "${DATABASE_URI}"
       }
+    },
+    "redis_mcp": {
+      "command": "/Users/rranjan/.local/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "--with",
+        "redis-mcp",
+        "redis-mcp",
+        "--access-mode=unrestricted",
+        "redis://localhost:6379"
+      ]
     }
-    
   }
 }
