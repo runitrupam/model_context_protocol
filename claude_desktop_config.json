@@ -50,7 +50,16 @@
         "/Users/rranjan/fountain9/rk_test/model_context_protocol/mcp_redis_server.py"
       ]
     },
-    "postgres2": {
+    "postgres3_npx": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "${DATABASE_URI}"
+      ]
+    },
+    
+    "postgres_mcp": {
       "command": "/Users/rranjan/.local/bin/uv",
       "args": [
         "run",
@@ -61,19 +70,13 @@
         "--with",
         "postgres-mcp",
         "postgres-mcp",
-        "--access-mode=unrestricted"
+        "--access-mode=unrestricted",
+        "${DATABASE_URI}"
       ],
       "env": {
         "DATABASE_URI": "${DATABASE_URI}"
       }
-    },
-    "postgres3_npx": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-postgres",
-        "${DATABASE_URI}"
-      ]
     }
+    
   }
 }
