@@ -1,0 +1,13 @@
+[project]
+name = "model-context-protocol-dir"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "httpx>=0.28.1",
+    "mcp[cli]>=1.6.0",
+    "redis>=5.0.1",
+    "psycopg[binary]>=3.1.12",
+    "modelcontextprotocol==0.1.0",
+]

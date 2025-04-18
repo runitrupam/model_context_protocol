@@ -1,0 +1,79 @@
+{
+  "mcpServers": {
+    "weather": {
+      "command": "/Users/rranjan/.local/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "--with",
+        "httpx",
+        "mcp",
+        "run",
+        "/Users/rranjan/fountain9/rk_test/model_context_protocol/weather.py"
+      ]
+    },
+    "Demo": {
+      "command": "/Users/rranjan/.local/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/rranjan/fountain9/rk_test/model_context_protocol/server_test.py"
+      ]
+    },
+    "postgres": {
+      "command": "/Users/rranjan/.local/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "--with",
+        "psycopg[binary]",
+        "--with",
+        "modelcontextprotocol",
+        "mcp",
+        "run",
+        "/Users/rranjan/fountain9/rk_test/model_context_protocol/mcp_postgres_server.py"
+      ]
+    },
+    "redis": {
+      "command": "/Users/rranjan/.local/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "mcp",
+        "run",
+        "/Users/rranjan/fountain9/rk_test/model_context_protocol/mcp_redis_server.py"
+      ]
+    },
+    "postgres2": {
+      "command": "/Users/rranjan/.local/bin/uv",
+      "args": [
+        "run",
+        "--with",
+        "mcp[cli]",
+        "--with",
+        "psycopg[binary]",
+        "--with",
+        "postgres-mcp",
+        "postgres-mcp",
+        "--access-mode=unrestricted"
+      ],
+      "env": {
+        "DATABASE_URI": "${DATABASE_URI}"
+      }
+    },
+    "postgres3_npx": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-postgres",
+        "${DATABASE_URI}"
+      ]
+    }
+  }
+}
